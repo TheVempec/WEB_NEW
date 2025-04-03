@@ -1,4 +1,4 @@
-# WEB_NEW
+
 Нагребельний Роман ІСД-11
 Оcновнийприклад дизайну
 https://www.figma.com/design/j89j0ythEKYODLpJkvx0hn/Travellian---Travel-Agency-Landing-Page--Community-?node-id=3-43&p=f&t=aFhkYChkohggGghW-0
