@@ -1,11 +1,13 @@
 body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Source Serif 4", serif;
 }
+
+
 
 .main-header {
   position: relative;
-  height: 1000px;
+  height: 1100px;
   z-index: 1;
   overflow: hidden;
 }
@@ -27,11 +29,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 50px;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(2px);
-  border-radius: 12px;
+  border-radius: 5px;
   margin: 20px auto;
   max-width: 95%;
 }
@@ -76,11 +78,12 @@ body {
   text-align: left;
   color: #333;
   left: 1400px;
-  padding: 90px;
+  padding: 45px;
   background-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(0.01px);
+  -webkit-backdrop-filter: blur(0.01px);
   border-radius: 6px;
+  top: 240px;
 }
 
 .name_motto h1 {
@@ -88,6 +91,7 @@ body {
 }
 
 .main-text h3 {
+  margin: 0px 10px;
   text-align: start;
   padding: 20px;
 }
@@ -113,6 +117,7 @@ body {
 
 .wrapper .slid:hover {
   height: 420px;
+  background-color: rgb(171, 222, 231);
 }
 
 .wrapper .slid .img {
@@ -121,7 +126,7 @@ body {
   height: 260px;
   background-image: var(--img);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top,center;
   background-size: 140%;
   animation: out 0.5s ease-in-out;
   transition: 0.5s;
@@ -153,7 +158,6 @@ body {
 }
 
 .wrapper .slid .img::after {
-  content: '';
   position: absolute;
   right: 0;
   bottom: 40%;
@@ -179,7 +183,7 @@ body {
 }
 
 .wrapper .slid .content p {
-  font-size: 0.95em;
+  font-size: 0.9em;
   color: #333;
 }
 
@@ -211,9 +215,84 @@ body {
   color: #222;
   transition: 0.5s;
   opacity: 0;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 .wrapper .slid:hover .content p {
   opacity: 1;
+}
+
+.title--popular--destinations h1{
+  position: relative;
+  margin-left: 120px;
+  bottom: -12px;
+   font-size: 30px;
+}
+
+.title--popular--destinations h4{
+  position: relative;
+  margin-left: 120px;
+  font-size: 15px;
+}
+
+.title--popular--destinations {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.color-line-under-title {
+  left:140px;
+  width: 350px;               
+  height: 4px;                
+  background-color: #7ed3fa;  
+  margin: 10px 120px;        
+  border-radius: 2px;         
+}
+
+.title--Interesting--facts h1{
+  position: relative;
+  margin-right: 120px;
+  bottom: -12px;
+   font-size: 30px;
+}
+
+.title--Interesting--facts h4{
+  position: relative;
+  margin-right: 120px;
+  font-size: 15px;
+}
+
+.title--Interesting--facts {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.title--Interesting--facts {
+  position: relative; /* можна для точного позиціювання */
+  width: 100%; /* або ширина контейнера */
+}
+
+.color-line-under-title-facts {
+  width: 350px;
+  height: 4px;
+  background-color: #7ed3fa;
+  margin-left: auto;    /* вирівнювання праворуч */
+  margin-top: 20px;     /* відстань зверху від заголовка, можна змінювати вручну */
+  margin-right: 120px;   /* відстань від правого краю контейнера */
+}
+
+.title--Interesting--facts {
+  text-align: right;
+  margin-bottom: 10px;  /* зменшено з 30px */
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px 20px 60px 20px; /* зверху зменшено з 60px до 20px */
 }
