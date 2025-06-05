@@ -90,24 +90,43 @@ body {
   margin: 10px 0;
 }
 
-.main-text h3 {
-  margin: 0px 10px;
-  text-align: start;
-  padding: 20px;
+.main-text  {
+  margin: 0 40px 0 40px;
+  text-align: center;
+ 
+}
+
+.slider-container {
+  margin: 50px 20px 90px 200px; 
+  position: relative; 
+  padding: 0; 
 }
 
 .wrapper {
+ 
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 40px;
-  padding: 60px 20px;
+  padding: 20px 0 60px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  width: 100%; 
+   scrollbar-width: none; 
+  -ms-overflow-style: none; 
+
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none; 
 }
 
 .wrapper .slid {
+  flex: 0 0 calc((80% - 3 * 40px) / 4); 
+  scroll-snap-align: start;
   position: relative;
-  width: 300px;
   height: 300px;
   border-radius: 40px;
   overflow: hidden;
@@ -115,111 +134,264 @@ body {
   transition: 0.5s;
 }
 
-.wrapper .slid:hover {
-  height: 420px;
-  background-color: rgb(171, 222, 231);
+    
+    .wrapper .slid:hover {
+      height: 420px;
+      background-color: rgb(171, 222, 231);
+    }
+
+    .wrapper .slid .img {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      background-image: var(--img);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 140%;
+      animation: out 0.5s ease-in-out;
+      transition: 0.5s;
+    }
+
+    .wrapper .slid:hover .img {
+      animation: in 0.5s ease-in-out;
+    }
+
+    @keyframes out {
+      0% { background-size: 140%; }
+      40% { background-size: 160%; }
+      100% { background-size: 140%; }
+    }
+
+    @keyframes in {
+      0% { background-size: 140%; }
+      40% { background-size: 160%; }
+      100% { background-size: 140%; }
+    }
+
+    .wrapper .slid .content {
+      padding: 10px 20px;
+      position: relative;
+      top: -20px;
+      z-index: 10;
+      padding: 0 30px;
+      transition: 0.5s;
+    }
+
+    .wrapper .slid .content h3 {
+      position: relative;
+      font-size: 20px;
+      color: black;
+      margin: 18px 0 5px;
+    }
+
+    .wrapper .slid .content h3 span {
+      position: absolute;
+      bottom: -12px;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.75;
+    }
+
+    .wrapper .slid .content p {
+      position: relative;
+      font-size: 15px;
+      color: #222;
+      transition: 0.5s;
+      opacity: 0;
+      padding-top: 5px;
+    }
+
+    .wrapper .slid:hover .content p {
+      opacity: 1;
+    }
+
+.nav-btn {
+  position:absolute;
+  top: -30%;
+ 
+  background-color: rgba(252, 94, 2, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px; 
+  cursor: pointer;
+  padding: 8px; 
+  border-radius: 20%;
+  user-select: none;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+
 }
 
-.wrapper .slid .img {
+.nav-btn:hover {
+  background-color: #7ed3fa;
+}
+
+.nav-btn.prev {
+  left: 18%;
+}
+
+.nav-btn.next {
+  right: 78%;
+}
+
+.blog-section {
+  font-family: 'Georgia', serif;
+  padding: 50px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.blog-header h2 {
+  font-size: 2.5rem;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.blog-header .underline {
+  width: 50px;
+  height: 2px;
+  background-color: #e45d48;
+  margin-bottom: 10px;
+}
+
+.blog-header p {
+  color: #777;
+}
+
+.blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.blog-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  flex: 1 1 400px;
+}
+
+.blog-text {
+  flex: 1 1 500px;
+}
+
+.blog-text h3 {
+  font-size: 2rem;
+  color: #1e1e1e;
+}
+
+.blog-text h3 span {
+  display: block;
+  font-size: 2rem;
+  color: #1e1e1e;
+}
+
+.blog-text p {
+  color: #555;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+.read-more {
+  color: #e45d48;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more span {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.slider-container:nth-of-type(2) {
   position: relative;
-  width: 100%;
-  height: 260px;
-  background-image: var(--img);
-  background-repeat: no-repeat;
-  background-position: top,center;
-  background-size: 140%;
-  animation: out 0.5s ease-in-out;
-  transition: 0.5s;
 }
 
-.wrapper .slid:hover .img {
-  animation: in 0.5s ease-in-out;
-}
-
-@keyframes out {
-  0% { background-size: 140%; }
-  40% { background-size: 160%; }
-  100% { background-size: 140%; }
-}
-
-@keyframes in {
-  0% { background-size: 140%; }
-  40% { background-size: 160%; }
-  100% { background-size: 140%; }
-}
-
-.wrapper .slid .img::before {
-  content: '';
+.prev--Interesting--facts,
+.next--Interesting--facts {
   position: absolute;
-  bottom: -40%;
-  width: 100%;
-  height: 80px;
-  border-radius: 40px;
+  top: -30%;
+  background-color: rgba(252, 94, 2, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.wrapper .slid .img::after {
+.prev--Interesting--facts {
+  right: 650px; 
+}
+
+.next--Interesting--facts {
+  right: 600px; 
+}
+
+.prev--Interesting--facts:hover,
+.next--Interesting--facts:hover {
+  background-color: #7ed3fa;
+}
+
+
+
+.slider-container:nth-of-type(3) {
+  position: relative;
+}
+
+.prev--popular--destinations,
+.next--popular--destinations {
   position: absolute;
-  right: 0;
-  bottom: 40%;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: transparent;
-  box-shadow: 75px 70px 0 40px #fff;
+  top: -30%;
+  background-color: rgba(252, 94, 2, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.wrapper .slid .content {
-  padding: 10px 20px;
+.prev--popular--destinations {
+  right: 900px; 
 }
 
-.wrapper .slid .content h3 {
-  margin: 18px 0 5px;
-  font-size: 1.2em;
+.next--popular--destinations {
+  right: 500px; 
 }
 
-.wrapper .slid .content span {
-  font-size: 0.9em;
-  color: #888;
-}
-
-.wrapper .slid .content p {
-  font-size: 0.9em;
-  color: #333;
-}
-
-.wrapper .slid .content {
+.slider-container:nth-of-type(4) {
   position: relative;
-  top: -20px;
-  z-index: 10;
-  padding: 0px 30px;
-  transition: 0.5s;
 }
 
-.wrapper .slid .content h3 {
-  position: relative;
-  font-size: 20px;
-  color: black;
-}
-
-.wrapper .slid .content h3 span {
+.prev--most--beautiful--castles,
+.next--most--beautiful--castles {
   position: absolute;
-  bottom: -12px;
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 0.75;
+  top: -30%;
+  background-color: rgba(252, 94, 2, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.wrapper .slid .content p {
-  position: relative;
-  font-size: 15px;
-  color: #222;
-  transition: 0.5s;
-  opacity: 0;
-  padding-top: 5px;
+.prev--most--beautiful--castles {
+  right: 1300px; 
 }
 
-.wrapper .slid:hover .content p {
-  opacity: 1;
+.next--most--beautiful--castles {
+  right: 1250px; 
 }
 
 .title--popular--destinations h1{
@@ -249,6 +421,34 @@ body {
   border-radius: 2px;         
 }
 
+.title--most--beautiful--castles h1{
+  position: relative;
+  margin-left: 120px;
+  bottom: -12px;
+   font-size: 30px;
+}
+
+.title--most--beautiful--castles h4{
+  position: relative;
+  margin-left: 120px;
+  font-size: 15px;
+}
+
+.title--most--beautiful--castles {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.color-line-under-title {
+  left:140px;
+  width: 350px;               
+  height: 4px;                
+  background-color: #7ed3fa;  
+  margin: 10px 120px;        
+  border-radius: 2px;         
+}
+
+
 .title--Interesting--facts h1{
   position: relative;
   margin-right: 120px;
@@ -268,31 +468,72 @@ body {
 }
 
 .title--Interesting--facts {
-  position: relative; /* можна для точного позиціювання */
-  width: 100%; /* або ширина контейнера */
+  position: relative; 
+  width: 100%; 
 }
 
 .color-line-under-title-facts {
   width: 350px;
   height: 4px;
   background-color: #7ed3fa;
-  margin-left: auto;    /* вирівнювання праворуч */
-  margin-top: 20px;     /* відстань зверху від заголовка, можна змінювати вручну */
-  margin-right: 120px;   /* відстань від правого краю контейнера */
+  margin-left: auto;   
+  margin-top: 20px;    
+  margin-right: 120px;  
 }
 
 .title--Interesting--facts {
   text-align: right;
-  margin-bottom: 10px;  /* зменшено з 30px */
+  margin-bottom: 10px;  
   position: relative;
   width: 100%;
 }
 
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding: 20px 20px 60px 20px; /* зверху зменшено з 60px до 20px */
+.footer {
+  background-color: #0f1b28;
+  padding: 40px 20px;
+  color:#fff;
 }
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer h2, .footer h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer p, .footer a {
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  margin-bottom: 8px;
+}
+
+.footer-social .social-icons a {
+  margin-right: 12px;
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+}
+
+.footer-social .social-icons a:hover {
+  color: #00aced;
+}
+
